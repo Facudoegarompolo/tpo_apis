@@ -1,4 +1,5 @@
 import './ProductCard.css'
+import { Link } from 'react-router-dom'
 
 function ProductCard({ product }) {
   const id    = product.id ?? product._id ?? product.codigo
@@ -8,7 +9,7 @@ function ProductCard({ product }) {
   const img   = product.imagen ?? product.image ?? ''
 
   return (
-    <a href={`/productos/${id}`} className="product-card">
+    <Link to={`/productos/${id}`} className="product-card">
       {img && (
         <img src={img} alt={name} className="product-card__img" />
       )}
@@ -20,7 +21,7 @@ function ProductCard({ product }) {
         {desc && <p className="product-card__desc">{desc}</p>}
         <span className="product-card__link">Ver detalle →</span>
       </div>
-    </a>
+    </Link>
   )
 }
 

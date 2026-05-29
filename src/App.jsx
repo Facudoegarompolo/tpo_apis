@@ -2,9 +2,9 @@ import { Routes, Route } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-
 import Home from './pages/Home'
-import Productos from './pages/Productos'
+import ProductList from './pages/ProductList'
+import ProductDetail from './pages/ProductDetail'
 import Login from './pages/Login'
 import Register from './pages/Register'
 
@@ -17,7 +17,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
 
-          <Route path="/productos" element={<Productos />} />
+          <Route path="/productos" element={<ProductList />} />
+
+          <Route path="/productos/:id" element={<ProductDetail />} />
 
           <Route path="/login" element={<Login />} />
 
